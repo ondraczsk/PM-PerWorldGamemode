@@ -117,21 +117,7 @@ class PerWorldGamemode extends PluginBase {
             }
         } elseif (count($params) == 2) {
 
-            if (($mode = Server::getGamemodeFromString($params[0])) !== -1 && $params[0] != "none") {
-
-                if ($this->getServer()->getLevel($params[1]) !== null) {
-                    $world = $params[1];
-                } else {
-                    return "You must put a correct world! (World names are case-sensitive)";
-                }
-            } elseif (($mode = Server::getGamemodeFromString($params[1])) !== -1 && $params[0] != "none") {
-
-                if ($this->getServer()->getLevel($params[0]) !== null) {
-                    $world = $params[0];
-                } else {
-                    return "You must put a correct world! (World names are case-sensitive)";
-                }
-            } else {
+          else {
                 return "You must put a correct gamemode! (survival, creative, view, or adventure)";
             }
         } else {
